@@ -1,0 +1,32 @@
+<div class="container-fluid absolute">
+    <div class="row vh-100 align-items-center ps-4 pe-4">
+        <div class="container border border-success rounded-4" data-bs-theme="dark">
+            <div class="titulo pt-4 pb-5">
+                <h3 class="text-white text-center">Sign in</h3>
+            </div>
+            <form [formGroup]="formLogin" (ngSubmit)="login()">
+                <div class="mb-3">
+                    <label class="form-label text-white">Email</label>
+                    <input formControlName="correo" type="email" class="form-control" placeholder="Enter your email">
+                    <div *ngIf="formLogin.get('correo')?.touched && formLogin.get('correo')?.errors?.['required']"
+                        class="alert alert-danger mt-2" role="alert">Email is required</div>
+                    <div *ngIf="formLogin.get('correo')?.touched && !formLogin.get('correo')?.errors?.['required'] && formLogin.get('correo')?.errors?.['email']"
+                        class="alert alert-danger mt-2" role="alert">Email is invalid</div>
+                </div>
+                <div class="mb-5">
+                    <label class="form-label text-white">Password</label>
+                    <input formControlName="contrasenia" type="password" class="form-control"
+                        placeholder="Enter your password">
+                    <div *ngIf="formLogin.get('contrasenia')?.touched && formLogin.get('contrasenia')?.errors?.['required']"
+                        class="alert alert-danger mt-2" role="alert">Password is required</div>
+                    <div *ngIf="formLogin.get('contrasenia')?.touched && !formLogin.get('contrasenia')?.errors?.['required'] && formLogin.get('contrasenia')?.errors?.['minlength']"
+                        class="alert alert-danger mt-2" role="alert">Minimun 6 characters</div>
+                </div>
+                <div class="boton text-center mb-4 d-grid gap-2 col-3 mx-auto">
+                    <button type="submit" class="btn btn-success pe-3 ps-3 rounded-pill">Sign in</button>
+                    <label *ngIf="formLogin.get('correo')?.touched" class="pointer gray-color" (click)="resetPassword()">Send reset password email</label>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

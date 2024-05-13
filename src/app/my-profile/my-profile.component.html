@@ -1,0 +1,26 @@
+<div class="container-fluid no-padding mt-2">
+    <div class="row">
+        <div class="col-11 text-white">
+            <h1>{{nickname}}</h1>
+        </div>
+        <div class="col-1">
+            <img class="btn" routerLink="/home" [src]="icNavigateBack">
+        </div>
+    </div>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/my-profile/{{nickname}}/songs" routerLinkActive="active">My Songs</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/my-profile/{{nickname}}/playlists" routerLinkActive="active">My Playlists</a>
+        </li>
+    </ul>
+
+    <div class="footer-space mt-2">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div>
+        <app-panel-control></app-panel-control>
+    </div>
+</div>

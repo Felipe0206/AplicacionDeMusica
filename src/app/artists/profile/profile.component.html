@@ -1,0 +1,18 @@
+<div class="contenedor">
+    <div class="row">
+        <div class="col-12 text-white">
+            <h1>{{nickname}}</h1>
+        </div>
+    </div>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/artists/profile/{{nickname}}/songs" routerLinkActive="active">Songs</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/artists/profile/{{nickname}}/playlists" routerLinkActive="active">Public Playlists</a>
+        </li>
+    </ul>
+    <div class="footer-space mt-2">
+        <router-outlet></router-outlet>
+    </div>
+</div>

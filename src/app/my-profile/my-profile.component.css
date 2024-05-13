@@ -1,0 +1,12 @@
+.nav-tabs .nav-link {
+    text-decoration: none !important;
+    color: #dee2e6;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #f1f6fc;
+}
+
+.footer-space{
+    padding-bottom: 120px;
+}
